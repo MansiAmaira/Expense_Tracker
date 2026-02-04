@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Elegant Emerald Theme - Fresh & Financial */
+  --background: 150 30% 98%;
+  --foreground: 160 50% 10%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 160 50% 10%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 160 50% 10%;
+  
+  --primary: 160 84% 39%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 150 30% 94%;
+  --secondary-foreground: 160 50% 20%;
+  
+  --muted: 150 20% 92%;
+  --muted-foreground: 160 20% 45%;
+  
+  --accent: 38 92% 50%; /* Golden accent for money */
+  --accent-foreground: 30 50% 10%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 150 20% 90%;
+  --input: 150 20% 90%;
+  --ring: 160 84% 39%;
+  
+  --radius: 1rem;
+}
+
+.dark {
+  --background: 160 50% 5%;
+  --foreground: 150 10% 95%;
+  
+  --card: 160 45% 8%;
+  --card-foreground: 150 10% 95%;
+  
+  --popover: 160 45% 8%;
+  --popover-foreground: 150 10% 95%;
+  
+  --primary: 160 84% 39%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 160 40% 12%;
+  --secondary-foreground: 150 10% 95%;
+  
+  --muted: 160 40% 12%;
+  --muted-foreground: 150 20% 65%;
+  
+  --accent: 38 92% 50%;
+  --accent-foreground: 30 50% 10%;
+  
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 160 40% 12%;
+  --input: 160 40% 12%;
+  --ring: 160 84% 39%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
+}
+
+/* Utilities */
+.glass-panel {
+  @apply bg-white/80 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg;
+}
+
+.currency-input {
+  @apply font-mono text-lg tracking-wide;
+}
